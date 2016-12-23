@@ -29,14 +29,14 @@ class MainViewController: UIViewController, DoneButtonDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "playgroundSegue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let controller = navigationController.topViewController as! PlaygroundViewController
-            controller.doneButtonDelegate = self
-        }
-        else if segue.identifier == "gameSegue"{
+        if segue.identifier == "gameSegue" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! GameViewController
+            controller.doneButtonDelegate = self
+        }
+        else if segue.identifier == "playgroundSegue"{
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! PlaygroundViewController
             
             controller.doneButtonDelegate = self
         }

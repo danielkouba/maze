@@ -18,6 +18,7 @@
 		A3CB211C1E0CB0C7003EBEAF /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB211B1E0CB0C7003EBEAF /* PlaygroundViewController.swift */; };
 		A3CB211E1E0CB0F4003EBEAF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB211D1E0CB0F4003EBEAF /* GameViewController.swift */; };
 		A3CB21201E0CB4CC003EBEAF /* BackButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB211F1E0CB4CC003EBEAF /* BackButtonDelegate.swift */; };
+		A3CF9CFF1E0CF78B00BE04B6 /* MazeStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CF9CFE1E0CF78B00BE04B6 /* MazeStructure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A3CB211B1E0CB0C7003EBEAF /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
 		A3CB211D1E0CB0F4003EBEAF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A3CB211F1E0CB4CC003EBEAF /* BackButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButtonDelegate.swift; sourceTree = "<group>"; };
+		A3CF9CFE1E0CF78B00BE04B6 /* MazeStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeStructure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				A3CB20F91E0CAE7D003EBEAF /* Info.plist */,
 				A3CB20F11E0CAE7D003EBEAF /* MAZER.xcdatamodeld */,
 				A3CB211F1E0CB4CC003EBEAF /* BackButtonDelegate.swift */,
+				A3CF9CFE1E0CF78B00BE04B6 /* MazeStructure.swift */,
 			);
 			path = MAZER;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CB211E1E0CB0F4003EBEAF /* GameViewController.swift in Sources */,
+				A3CF9CFF1E0CF78B00BE04B6 /* MazeStructure.swift in Sources */,
 				A3CB20ED1E0CAE7D003EBEAF /* MainViewController.swift in Sources */,
 				A3CB211C1E0CB0C7003EBEAF /* PlaygroundViewController.swift in Sources */,
 				A3CB21201E0CB4CC003EBEAF /* BackButtonDelegate.swift in Sources */,
@@ -530,6 +534,7 @@
 				A3CB21141E0CAE7D003EBEAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3CB21151E0CAE7D003EBEAF /* Build configuration list for PBXNativeTarget "MAZERTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +543,7 @@
 				A3CB21171E0CAE7D003EBEAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3CB21181E0CAE7D003EBEAF /* Build configuration list for PBXNativeTarget "MAZERUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +552,7 @@
 				A3CB211A1E0CAE7D003EBEAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
