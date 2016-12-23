@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A3CB20EB1E0CAE7D003EBEAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB20EA1E0CAE7D003EBEAF /* AppDelegate.swift */; };
-		A3CB20ED1E0CAE7D003EBEAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB20EC1E0CAE7D003EBEAF /* ViewController.swift */; };
+		A3CB20ED1E0CAE7D003EBEAF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB20EC1E0CAE7D003EBEAF /* MainViewController.swift */; };
 		A3CB20F01E0CAE7D003EBEAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CB20EE1E0CAE7D003EBEAF /* Main.storyboard */; };
 		A3CB20F31E0CAE7D003EBEAF /* MAZER.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3CB20F11E0CAE7D003EBEAF /* MAZER.xcdatamodeld */; };
 		A3CB20F51E0CAE7D003EBEAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3CB20F41E0CAE7D003EBEAF /* Assets.xcassets */; };
 		A3CB20F81E0CAE7D003EBEAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CB20F61E0CAE7D003EBEAF /* LaunchScreen.storyboard */; };
 		A3CB21031E0CAE7D003EBEAF /* MAZERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB21021E0CAE7D003EBEAF /* MAZERTests.swift */; };
 		A3CB210E1E0CAE7D003EBEAF /* MAZERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB210D1E0CAE7D003EBEAF /* MAZERUITests.swift */; };
+		A3CB211C1E0CB0C7003EBEAF /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB211B1E0CB0C7003EBEAF /* PlaygroundViewController.swift */; };
+		A3CB211E1E0CB0F4003EBEAF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB211D1E0CB0F4003EBEAF /* GameViewController.swift */; };
+		A3CB21201E0CB4CC003EBEAF /* BackButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB211F1E0CB4CC003EBEAF /* BackButtonDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		A3CB20E71E0CAE7D003EBEAF /* MAZER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAZER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CB20EA1E0CAE7D003EBEAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3CB20EC1E0CAE7D003EBEAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A3CB20EC1E0CAE7D003EBEAF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3CB20EF1E0CAE7D003EBEAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3CB20F21E0CAE7D003EBEAF /* MAZER.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MAZER.xcdatamodel; sourceTree = "<group>"; };
 		A3CB20F41E0CAE7D003EBEAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		A3CB21091E0CAE7D003EBEAF /* MAZERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAZERUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CB210D1E0CAE7D003EBEAF /* MAZERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAZERUITests.swift; sourceTree = "<group>"; };
 		A3CB210F1E0CAE7D003EBEAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3CB211B1E0CB0C7003EBEAF /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
+		A3CB211D1E0CB0F4003EBEAF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A3CB211F1E0CB4CC003EBEAF /* BackButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButtonDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				A3CB20EA1E0CAE7D003EBEAF /* AppDelegate.swift */,
-				A3CB20EC1E0CAE7D003EBEAF /* ViewController.swift */,
+				A3CB20EC1E0CAE7D003EBEAF /* MainViewController.swift */,
+				A3CB211B1E0CB0C7003EBEAF /* PlaygroundViewController.swift */,
+				A3CB211D1E0CB0F4003EBEAF /* GameViewController.swift */,
 				A3CB20EE1E0CAE7D003EBEAF /* Main.storyboard */,
 				A3CB20F41E0CAE7D003EBEAF /* Assets.xcassets */,
 				A3CB20F61E0CAE7D003EBEAF /* LaunchScreen.storyboard */,
 				A3CB20F91E0CAE7D003EBEAF /* Info.plist */,
 				A3CB20F11E0CAE7D003EBEAF /* MAZER.xcdatamodeld */,
+				A3CB211F1E0CB4CC003EBEAF /* BackButtonDelegate.swift */,
 			);
 			path = MAZER;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3CB20ED1E0CAE7D003EBEAF /* ViewController.swift in Sources */,
+				A3CB211E1E0CB0F4003EBEAF /* GameViewController.swift in Sources */,
+				A3CB20ED1E0CAE7D003EBEAF /* MainViewController.swift in Sources */,
+				A3CB211C1E0CB0C7003EBEAF /* PlaygroundViewController.swift in Sources */,
+				A3CB21201E0CB4CC003EBEAF /* BackButtonDelegate.swift in Sources */,
 				A3CB20EB1E0CAE7D003EBEAF /* AppDelegate.swift in Sources */,
 				A3CB20F31E0CAE7D003EBEAF /* MAZER.xcdatamodeld in Sources */,
 			);
@@ -424,7 +436,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielkouba.MAZER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -437,7 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielkouba.MAZER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
