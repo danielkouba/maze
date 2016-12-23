@@ -35,6 +35,8 @@ class PlaygroundViewController: UIViewController {
     
     
     
+    
+    
     @IBAction func solveButtonPressed(button: UIButton) {
         if button.titleLabel!.text! == "SOLVE"{
             button.backgroundColor = UIColor.orangeColor()
@@ -44,6 +46,8 @@ class PlaygroundViewController: UIViewController {
             button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.80, alpha: 1)
             button.setTitle("SOLVE", forState: UIControlState.Normal)
             board = Graph(width:10, array: a)
+            //            scoreString =
+
             self.initSquares()
             
             //            for tile in tileButtonCollection{
@@ -64,24 +68,16 @@ class PlaygroundViewController: UIViewController {
         a = Array(count:140, repeatedValue:0)
         a[1] = 1
         a[a.count - 1 ] = 2
+
         
         board = Graph(width:10, array: a)
         self.initSquares()
         
-        
         solveButtonOutlet.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.80, alpha: 1)
         solveButtonOutlet.setTitle("SOLVE", forState: UIControlState.Normal)
-        //        for tile in gridButtonOutletCollection{
-        //            if String(tile.backgroundColor!) == "UIExtendedSRGBColorSpace 0 1 1 1"{
-        //                tile.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
-        //            }
-        //        }
     }
     
-    
-    
-    
-    
+
     
     
     
@@ -98,23 +94,27 @@ class PlaygroundViewController: UIViewController {
         if brickCreator == "wall"{
             // Check for start value
             if tile.value == 1 {
-                tile.button?.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                tile.button?.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                tile.button!.alpha = 0.5
                 a[idx] = 0
                 tile.value = 0
                 brickCreator = "start"
                 // Check for end value
             } else if tile.value == 2 {
-                tile.button?.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                tile.button?.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                tile.button!.alpha = 0.5
                 a[idx] = 0
                 tile.value = 0
                 brickCreator = "end"
                 //Check for blank value
             } else if tile.value == 0{
                 tile.button?.backgroundColor = UIColor.blackColor()
+                tile.button!.alpha = 0.5
                 a[idx] = -1
                 tile.value = -1
             } else {
-                tile.button?.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                tile.button?.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                tile.button!.alpha = 0.5
                 a[idx] = 0
                 tile.value = 0
             }
@@ -125,17 +125,20 @@ class PlaygroundViewController: UIViewController {
         } else if brickCreator == "start" {
             if tile.value == 2 {
                 tile.button?.backgroundColor = UIColor.greenColor()
+                tile.button!.alpha = 0.9
                 tile.value = 1
                 a[idx] = 1
                 brickCreator = "end"
                 //Check for blank value
             } else if tile.value == 0{
                 tile.button?.backgroundColor = UIColor.greenColor()
+                tile.button!.alpha = 0.9
                 tile.value = 1
                 a[idx] = 1
                 brickCreator = "wall"
             } else {
                 tile.button?.backgroundColor = UIColor.greenColor()
+                tile.button!.alpha = 0.9
                 tile.value = 1
                 a[idx] = 1
                 brickCreator = "wall"
@@ -149,17 +152,20 @@ class PlaygroundViewController: UIViewController {
         } else if brickCreator == "end" {
             if tile.value == 1 {
                 tile.button?.backgroundColor = UIColor.redColor()
+                tile.button!.alpha = 0.9
                 tile.value = 2
                 a[idx] = 2
                 brickCreator = "start"
                 //Check for blank value
             } else if tile.value == 0{
                 tile.button?.backgroundColor = UIColor.redColor()
+                tile.button!.alpha = 0.9
                 tile.value = 2
                 a[idx] = 2
                 brickCreator = "wall"
             } else {
                 tile.button?.backgroundColor = UIColor.redColor()
+                tile.button!.alpha = 0.9
                 tile.value = 2
                 a[idx] = 2
                 brickCreator = "wall"
@@ -176,9 +182,6 @@ class PlaygroundViewController: UIViewController {
     var board: Graph?
     
     
-    ////////////////////////////////////////
-    // Initialize board
-    // Check Through Squares
     private func initSquares(){
         ////////////////////////////////////////
         // Associate Buttons with Nodes
@@ -193,6 +196,8 @@ class PlaygroundViewController: UIViewController {
                     //Put button here
                     board!.list![idx].button = button
                     button.backgroundColor = UIColor.greenColor()
+                    button.alpha = 0.9
+                    button.enabled = true
                 }
             } else if board!.list![idx].value == 2 {
                 ////////////////////////////////////////
@@ -200,6 +205,8 @@ class PlaygroundViewController: UIViewController {
                 if let button = self.view.viewWithTag(idx + 1) as? UIButton {
                     board!.list![idx].button = button
                     button.backgroundColor = UIColor.redColor()
+                    button.alpha = 0.9
+                    button.enabled = true
                 }
             } else if board!.list![idx].value == -1 {
                 ////////////////////////////////////////
@@ -207,13 +214,17 @@ class PlaygroundViewController: UIViewController {
                 if let button = self.view.viewWithTag(idx + 1) as? UIButton {
                     board!.list![idx].button = button
                     button.backgroundColor = UIColor.blackColor()
+                    button.enabled = true
+                    button.alpha = 0.5
                 }
             } else {
                 ////////////////////////////////////////
                 //For all other values turn the button grey
                 if let button = self.view.viewWithTag(idx + 1) as? UIButton {
                     board!.list![idx].button = button
-                    button.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                    button.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                    button.enabled = true
+                    button.alpha = 0.5
                 }
             }
             

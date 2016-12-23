@@ -55,8 +55,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAZER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbM-AZ-et3">
-                                <rect key="frame" x="16" y="228.00000000000003" width="382" height="79.666666666666714"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="63"/>
+                                <rect key="frame" x="16" y="191.33333333333331" width="382" height="116.33333333333331"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="94"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.9181865078" green="0.30270430189999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -735,7 +735,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3T-ow-hy5">
                                 <rect key="frame" x="0.0" y="581" width="414" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="0.72913953990000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.80669487849999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="6Qz-XF-kSG"/>
                                 </constraints>
@@ -757,6 +757,9 @@
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="NTw-0l-ygT" eventType="touchUpInside" id="SH9-2O-osj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -778,7 +781,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PLAYGROUND" id="UOl-x8-b1L">
-                        <barButtonItem key="leftBarButtonItem" title="Home" id="cx3-pS-UGd">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="cx3-pS-UGd">
                             <connections>
                                 <action selector="doneBarButtonPressed:" destination="NTw-0l-ygT" id="Qkd-Sf-XgK"/>
                             </connections>
@@ -939,7 +942,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8SN-gh-bfV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hlm-q7-8gH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hlm-q7-8gH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -964,7 +967,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vw0-mA-Ga7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_dark" translatesAutoresizingMaskIntoConstraints="NO" id="vw0-mA-Ga7">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="epq-XS-8DQ">
@@ -1604,7 +1607,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YE-zO-dzG">
                                 <rect key="frame" x="0.0" y="581" width="414" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="0.72913953990000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.80669487849999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="RWT-h8-A50"/>
                                 </constraints>
@@ -1616,47 +1619,44 @@
                                     <action selector="solveButtonPressed:" destination="1Zj-Mz-srR" eventType="touchUpInside" id="KQ5-wJ-UT6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bc-l4-dyl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-O7-7wk">
                                 <rect key="frame" x="0.0" y="681" width="414" height="55"/>
-                                <color key="backgroundColor" red="1" green="0.28922526040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.87528230080000002" green="0.28374565969999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="RS5-Ih-KtD"/>
+                                    <constraint firstAttribute="height" constant="55" id="SEW-8K-PYa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <state key="normal" title="RESET">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetButtonPressed:" destination="1Zj-Mz-srR" eventType="touchUpInside" id="02g-Gf-dob"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9bc-l4-dyl" firstAttribute="top" secondItem="5YE-zO-dzG" secondAttribute="bottom" id="4GE-Oc-UQ1"/>
                             <constraint firstItem="5YE-zO-dzG" firstAttribute="leading" secondItem="qmP-MY-OkT" secondAttribute="leading" id="6Bu-Ay-hFO"/>
-                            <constraint firstItem="9bc-l4-dyl" firstAttribute="leading" secondItem="qmP-MY-OkT" secondAttribute="leading" id="FOS-dK-IUy"/>
                             <constraint firstItem="epq-XS-8DQ" firstAttribute="leading" secondItem="qmP-MY-OkT" secondAttribute="leading" id="HPf-V7-VZh"/>
                             <constraint firstItem="90Z-lT-hMx" firstAttribute="top" secondItem="vw0-mA-Ga7" secondAttribute="bottom" id="Jw6-u9-VGo"/>
+                            <constraint firstItem="90Z-lT-hMx" firstAttribute="top" secondItem="S9E-O7-7wk" secondAttribute="bottom" id="Kj4-Gk-SXl"/>
                             <constraint firstItem="epq-XS-8DQ" firstAttribute="top" secondItem="ELY-ga-voL" secondAttribute="bottom" id="Lky-T0-vsO"/>
                             <constraint firstAttribute="trailing" secondItem="5YE-zO-dzG" secondAttribute="trailing" id="Lxo-0f-xIc"/>
+                            <constraint firstItem="S9E-O7-7wk" firstAttribute="leading" secondItem="qmP-MY-OkT" secondAttribute="leading" id="RoV-cJ-voz"/>
                             <constraint firstItem="vw0-mA-Ga7" firstAttribute="leading" secondItem="qmP-MY-OkT" secondAttribute="leading" id="Xbi-Vd-pwL"/>
                             <constraint firstItem="5YE-zO-dzG" firstAttribute="top" secondItem="epq-XS-8DQ" secondAttribute="bottom" constant="2" id="bDH-Gu-0dj"/>
-                            <constraint firstItem="90Z-lT-hMx" firstAttribute="top" secondItem="9bc-l4-dyl" secondAttribute="bottom" id="bjy-oq-KdW"/>
                             <constraint firstAttribute="trailing" secondItem="vw0-mA-Ga7" secondAttribute="trailing" id="d0k-Ob-gwN"/>
-                            <constraint firstAttribute="trailing" secondItem="9bc-l4-dyl" secondAttribute="trailing" id="e9h-d8-fBH"/>
+                            <constraint firstItem="S9E-O7-7wk" firstAttribute="top" secondItem="5YE-zO-dzG" secondAttribute="bottom" id="kdl-tn-RGO"/>
                             <constraint firstItem="vw0-mA-Ga7" firstAttribute="top" secondItem="ELY-ga-voL" secondAttribute="bottom" id="lAV-qr-SSI"/>
+                            <constraint firstAttribute="trailing" secondItem="S9E-O7-7wk" secondAttribute="trailing" id="p75-yv-dXC"/>
                             <constraint firstAttribute="trailing" secondItem="epq-XS-8DQ" secondAttribute="trailing" id="yjf-6K-JUE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GAME" id="Ard-ne-Nh5">
-                        <barButtonItem key="leftBarButtonItem" title="Home" id="VMz-PS-vqu">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="VMz-PS-vqu">
                             <connections>
-                                <action selector="doneBarButtonPressed:" destination="1Zj-Mz-srR" id="bMk-I5-VAz"/>
+                                <action selector="doneBarButtonPressed:" destination="1Zj-Mz-srR" id="gjN-qQ-c36"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="scoreLabelOutlet" destination="S9E-O7-7wk" id="7yp-2e-rhj"/>
                         <outlet property="solveButtonOutlet" destination="5YE-zO-dzG" id="LzQ-EB-8L7"/>
                         <outletCollection property="tileButtonCollection" destination="e9d-XT-1dy" collectionClass="NSMutableArray" id="v7z-z9-rXQ"/>
                         <outletCollection property="tileButtonCollection" destination="RFe-Y5-s4u" collectionClass="NSMutableArray" id="Qix-Em-Toa"/>
@@ -1804,14 +1804,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yo-L4-SO5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="890"/>
+            <point key="canvasLocation" x="1711.5942028985507" y="889.4021739130435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jVQ-37-wBR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kOi-rS-KUu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Eh-CF-rLn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0Eh-CF-rLn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1827,5 +1827,6 @@
     </scenes>
     <resources>
         <image name="background" width="1242" height="2208"/>
+        <image name="background_dark" width="1242" height="2208"/>
     </resources>
 </document>

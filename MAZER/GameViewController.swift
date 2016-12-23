@@ -9,17 +9,20 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    
+    
     ////////////////////////////////////////
     // MARK: - Button Collection
     ////////////////////////////////////////
     @IBOutlet var tileButtonCollection: [UIButton]!
-    
+    @IBOutlet weak var scoreLabelOutlet: UILabel!
     ////////////////////////////////////////
     // MARK: - Declare Variables
     ////////////////////////////////////////
     var brickCreator = "wall"
     var a = Array(count:140, repeatedValue:0)
-    
+    var score: Int = 0
     
     
     ////////////////////////////////////////
@@ -35,43 +38,34 @@ class GameViewController: UIViewController {
     
     
     
+    
     @IBAction func solveButtonPressed(button: UIButton) {
         if button.titleLabel!.text! == "SOLVE"{
             button.backgroundColor = UIColor.orangeColor()
-            button.setTitle("CLEAR", forState: UIControlState.Normal)
+            button.setTitle("RESET", forState: UIControlState.Normal)
             self.aStar()
-        }else if button.titleLabel!.text! == "CLEAR"{
-            button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.80, alpha: 1)
-            button.setTitle("SOLVE", forState: UIControlState.Normal)
+        }else if button.titleLabel!.text! == "RESET"{
+            
+            a = Array(count:140, repeatedValue:0)
+            a[Int(arc4random_uniform(139) + 1)] = 1
+            a[Int(arc4random_uniform(139) + 1)] = 2
+            
+            scoreLabelOutlet.text = String(self.score)
+            self.score = 0
             board = Graph(width:10, array: a)
             self.initSquares()
             
-            //            for tile in tileButtonCollection{
-//                if String(tile.backgroundColor!) == "UIExtendedSRGBColorSpace 0 1 1 1"{
-//                    tile.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
-//                }
-//            }
+            solveButtonOutlet.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.80, alpha: 1)
+            solveButtonOutlet.setTitle("SOLVE", forState: UIControlState.Normal)
+            
         }
     }
     ////////////////////////////////////////
     // MARK: - Reset Button
     ////////////////////////////////////////
     @IBOutlet weak var solveButtonOutlet: UIButton!
-    @IBAction func resetButtonPressed(sender: AnyObject) {
-        ////////////////////////////////////////
-        //Initialize Maze
-        
-        a = Array(count:140, repeatedValue:0)
-        a[Int(arc4random_uniform(139) + 1)] = 1
-        a[Int(arc4random_uniform(139) + 1)] = 2
-        
-        board = Graph(width:10, array: a)
-        self.initSquares()
-        
-        
-        solveButtonOutlet.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.80, alpha: 1)
-        solveButtonOutlet.setTitle("SOLVE", forState: UIControlState.Normal)
-    }
+ 
+    
     
 
     
@@ -93,23 +87,27 @@ class GameViewController: UIViewController {
         if brickCreator == "wall"{
             // Check for start value
             if tile.value == 1 {
-                tile.button?.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                tile.button?.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                tile.button!.alpha = 0.5
                 a[idx] = 0
                 tile.value = 0
                 brickCreator = "start"
                 // Check for end value
             } else if tile.value == 2 {
-                tile.button?.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                tile.button?.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                tile.button!.alpha = 0.5
                 a[idx] = 0
                 tile.value = 0
                 brickCreator = "end"
                 //Check for blank value
             } else if tile.value == 0{
                 tile.button?.backgroundColor = UIColor.blackColor()
+                tile.button!.alpha = 0.5
                 a[idx] = -1
                 tile.value = -1
             } else {
-                tile.button?.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                tile.button?.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                tile.button!.alpha = 0.5
                 a[idx] = 0
                 tile.value = 0
             }
@@ -120,17 +118,20 @@ class GameViewController: UIViewController {
         } else if brickCreator == "start" {
             if tile.value == 2 {
                 tile.button?.backgroundColor = UIColor.greenColor()
+                tile.button!.alpha = 0.9
                 tile.value = 1
                 a[idx] = 1
                 brickCreator = "end"
                 //Check for blank value
             } else if tile.value == 0{
                 tile.button?.backgroundColor = UIColor.greenColor()
+                tile.button!.alpha = 0.9
                 tile.value = 1
                 a[idx] = 1
                 brickCreator = "wall"
             } else {
                 tile.button?.backgroundColor = UIColor.greenColor()
+                tile.button!.alpha = 0.9
                 tile.value = 1
                 a[idx] = 1
                 brickCreator = "wall"
@@ -144,17 +145,20 @@ class GameViewController: UIViewController {
         } else if brickCreator == "end" {
             if tile.value == 1 {
                 tile.button?.backgroundColor = UIColor.redColor()
+                tile.button!.alpha = 0.9
                 tile.value = 2
                 a[idx] = 2
                 brickCreator = "start"
                 //Check for blank value
             } else if tile.value == 0{
                 tile.button?.backgroundColor = UIColor.redColor()
+                tile.button!.alpha = 0.9
                 tile.value = 2
                 a[idx] = 2
                 brickCreator = "wall"
             } else {
                 tile.button?.backgroundColor = UIColor.redColor()
+                tile.button!.alpha = 0.9
                 tile.value = 2
                 a[idx] = 2
                 brickCreator = "wall"
@@ -188,6 +192,8 @@ class GameViewController: UIViewController {
                     //Put button here
                     board!.list![idx].button = button
                     button.backgroundColor = UIColor.greenColor()
+                    button.alpha = 0.9
+                    button.enabled = false
                 }
             } else if board!.list![idx].value == 2 {
                 ////////////////////////////////////////
@@ -195,6 +201,8 @@ class GameViewController: UIViewController {
                 if let button = self.view.viewWithTag(idx + 1) as? UIButton {
                     board!.list![idx].button = button
                     button.backgroundColor = UIColor.redColor()
+                    button.alpha = 0.9
+                    button.enabled = false
                 }
             } else if board!.list![idx].value == -1 {
                 ////////////////////////////////////////
@@ -202,13 +210,17 @@ class GameViewController: UIViewController {
                 if let button = self.view.viewWithTag(idx + 1) as? UIButton {
                     board!.list![idx].button = button
                     button.backgroundColor = UIColor.blackColor()
+                    button.enabled = true
+                    button.alpha = 0.5
                 }
             } else {
                 ////////////////////////////////////////
                 //For all other values turn the button grey
                 if let button = self.view.viewWithTag(idx + 1) as? UIButton {
                     board!.list![idx].button = button
-                    button.backgroundColor = UIColor(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1)
+                    button.backgroundColor = UIColor(colorLiteralRed: 1, green: 0.23, blue: 1, alpha: 0.5)
+                    button.enabled = true
+                    button.alpha = 0.5
                 }
             }
             
@@ -302,14 +314,20 @@ class GameViewController: UIViewController {
     
     func trackback(){
         var current = self.board!.end
-        while current !== self.board!.first {
+        
+        while current !== self.board!.start {
+            score = score + 50
+            scoreLabelOutlet.text = String(score)
+            print(score)
             if current!.parent == nil {
                 break
             }
             if current !== self.board!.end{
                 current!.button?.backgroundColor = UIColor.cyanColor()
+                current!.button!.alpha = 0.9
             }
             current = current!.parent
+            
         }
     }
     
@@ -318,6 +336,7 @@ class GameViewController: UIViewController {
     
     
     
+
     
     
     
@@ -327,6 +346,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+//        self.navigationController!.navigationBar.barTintColor = UIColor.blueColor()
+//         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         ////////////////////////////////////////
         // Declare game board array and init Maze
         ////////////////////////////////////////
@@ -342,6 +364,7 @@ class GameViewController: UIViewController {
             let backButtonTap = UITapGestureRecognizer(target: self, action: "tileButtonPressed:")
             button.userInteractionEnabled = true
             button.addGestureRecognizer(backButtonTap)
+            score = 0
         }
     }
     
